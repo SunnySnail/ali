@@ -29,7 +29,7 @@ body{
     @include animation(starmove 1s alternate infinite);
 }
 .ali-boring{
-    display: none;
+    // display: none;
     @include middle();
     left: 150px;
     .left-ear{
@@ -369,8 +369,9 @@ body{
     }
 }
 .ali-happy{
-    display: none;
+    // display: none;
     @include middle();
+    left: 600px;
     .left-ear{
         @extend %ear;
         border-radius: 20px 70px 20px 60px/30px 30px 20px 80px;
@@ -737,7 +738,7 @@ body{
 }
 .ali-cry{
     @include middle();
-    left: 450px;
+    left: 380px;
     .left-ear{
         @extend %ear;
         border-radius: 20px 70px 20px 60px/30px 30px 20px 80px;
@@ -892,6 +893,16 @@ body{
                 border-radius: 50%/60%;
                 transform: rotate(15deg);
             }
+            .left-water{
+                position: absolute;
+                background-color: #B2E1ED;
+                width: 45px;
+                height: 30px;
+                border-radius: 20px 20px/30px;
+                bottom: -8px;
+                left: 0px;
+                z-index: -1;
+            }
             .left-blank,.right-blank{
                 background-color: #fff;
                 position: absolute;
@@ -916,6 +927,16 @@ body{
             border: 1px solid #000;
             border-radius: 17px 20px 29px 20px/19px 20px 17px 20px;
             background-color: #000;
+            .right-water{
+                position: absolute;
+                background-color: #B2E1ED;
+                width: 45px;
+                height: 30px;
+                border-radius: 20px 20px/30px;
+                bottom: -8px;
+                right: 0;
+                z-index: -1;
+            }
             &:before{
                 content: "";
                 width: 22px;
@@ -932,7 +953,7 @@ body{
                 height: 15px;
                 background-color: #F3D9B8;
                 position: absolute;
-                right: 4px;
+                left: 7px;
                 top: -11px;
                 border-radius: 50%/60%;
                 transform: rotate(15deg);
@@ -1005,39 +1026,20 @@ body{
     .mouth{
         position: absolute;
         @include hirozonMiddle();
-        top: 125px;
+        top: 130px;
         width: 25px;
-        height: 28px;
-        background-color: red;
-        border-radius: 0 0 50% 50%;
+        height: 25px;
+        background-color: #000;
+        border-radius: 50% 50%;
         &:before{
             content: "";
-            width: 18px;
-            height: 15px;
+            width: 30px;
+            height: 23px;
             background-color: #F3D9B8;
             position: absolute;
             border-radius: 50%;
-            left: -4px;
-            top: -10px;
-        }
-        &:after{
-            content: "";
-            width: 18px;
-            height: 15px;
-            background-color: #F3D9B8;
-            position: absolute;
-            border-radius: 50%;
-            right: -4px;
-            top: -10px;
-        }
-        .mouth-inside{
-            @include hirozonMiddle();
-            width: 21px;
-            height: 15px;
-            background-color: pink;
-            position: absolute;
-            bottom: 0;
-            border-radius: 50%;
+            left: -3px;
+            top: 4px;
         }
     }
 
@@ -1057,6 +1059,16 @@ body{
             @include transform(rotate(5deg));
         }
     }
+    .left-hand{
+        position: absolute;
+        left: 34px;
+        width: 30px;
+        height: 60px;
+        background-color: red;
+        border-radius: 50%;
+        z-index: 1;
+        top: 128px;
+    }
     .body{
         position: absolute;
         @include hirozonMiddle();
@@ -1064,15 +1076,6 @@ body{
         height: 105px;
         width: 185px;
         z-index: -1;
-        .left-hand{
-            position: absolute;
-            left: 10px;
-            width: 70px;
-            height: 30px;
-            background-color: red;
-            border-radius: 50%;
-            @include animation(lefthandmove .5s alternate infinite);
-        }
         .right-hand{
             position: absolute;
             right: 10px;
